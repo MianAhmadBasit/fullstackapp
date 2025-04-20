@@ -10,6 +10,7 @@ async function login(req,res) {
 try{
 
     const {email,password} = req.body;
+    
     const existinguser = await User.findOne({email})
     if(!existinguser){
         throw new error("user not found")

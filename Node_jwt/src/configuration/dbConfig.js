@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-mongoose.connect('mongodb+srv://ahmad:Ahmad.321@ahamddev.vcfjp.mongodb.net/?retryWrites=true&w=majority&appName=ahamddev', {
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_URI, {
      serverSelectionTimeoutMS: 5000,
 })
 mongoose.connection.on('connected', () => {
